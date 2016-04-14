@@ -14,7 +14,7 @@ Setup projects folder structure and create webpack.config.js
 
 ```
 $ mkdir src
-$ touch src/main.js
+$ touch src/app.js
 $ mkdir test
 $ mkdir dist
 $ touch webpack.config.js
@@ -61,6 +61,19 @@ Install react related packages:
 $ npm i react react-dom redux react-redux react-router immutable --save
 $ touch dist/index.html
 ```
+
+Create the root component:
+
+```
+$ mkdir src/components
+$ touch src/components/Application.js
+$ mkdir src/containers
+$ mkdir src/reducers
+$ touch src/reducers/index.js
+```
+
+Edit src/app.js:
+
 
 
 
