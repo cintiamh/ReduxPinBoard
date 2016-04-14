@@ -72,9 +72,65 @@ $ mkdir src/reducers
 $ touch src/reducers/index.js
 ```
 
-Edit src/app.js:
+#### Basic content
 
+src/components/Application.js
 
+```js
+import React from 'react';
+
+const Application = () => (
+  <div>
+    <h1>My Board</h1>
+  </div>
+);
+
+export default Application;
+```
+
+src/reducers/pins.js:
+
+```js
+const pins = (state = [], action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
+export default pins;
+```
+
+src/reducers/index.js:
+
+```js
+import { combineReducers } from 'redux';
+import pins from './pins';
+const boardApp = combineReducers({
+  pins
+});
+export default boardApp;
+
+```
+
+src/app.js:
+
+```js
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import boardApp from './reducers/index';
+import Application from './components/Application';
+
+let store = createStore(boardApp);
+
+render(
+  <Provider store={store}>
+    <Application />
+  </Provider>,
+  document.getElementById('root')
+);
+```
 
 
 ## The API
