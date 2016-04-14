@@ -132,6 +132,23 @@ render(
 );
 ```
 
+Running development mode: preview is available at http://localhost:3000
+
+```
+$ npm run dev
+```
+
+### Setting up Mocha, Chai, Sinon, and Enzyme
+
+```
+$ npm i mocha chai sinon --save-dev
+$ npm i babel-register --save-dev
+```
+
+Include testing scripts to package.json:
+
+```
+```
 
 ## The API
 
