@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server --port 3000 --devtool eval --progress --colors --hot --content-base dist",
     "build": "webpack",
     "test": "node_modules/.bin/karma start karma.config.js",
-    "test:dev": "npm run test -- --watch"
+    "test:dev": "npm run test -- --watch",
+    "lint": "eslint . --ext .js --ext .jsx"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,9 @@
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.7.2",
     "chai": "^3.5.0",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-react": "^4.3.0",
     "mocha": "^2.4.5",
     "sinon": "^1.17.3",
     "webpack": "^1.12.15",

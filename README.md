@@ -207,6 +207,26 @@ describe('Application', () => {
 });
 ```
 
+### ESLint
+
+```
+$ npm install --save-dev eslint-config-airbnb eslint-plugin-react eslint
+```
+
+Include script:
+
+```
+"lint": "eslint . --ext .js --ext .jsx"
+```
+
+Create files:
+
+```
+$ touch .eslintignore
+$ touch .eslintrc
+```
+
+
 ## The API
 
 https://engineering.pinterest.com/blog/start-building-pinterest-api
