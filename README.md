@@ -145,9 +145,66 @@ $ npm i mocha chai sinon --save-dev
 $ npm i babel-register --save-dev
 ```
 
+Create Test helper file:
+
+```
+$ touch test/testHelper.js
+```
+
 Include testing scripts to package.json:
 
 ```
+"test": "mocha --compilers js:babel-register --require ./test/test_helper.js --recursive",
+"test:watch": "npm test -- --watch",
+```
+
+### Enzyme
+
+```
+$ npm i enzyme react-addons-test-utils --save-dev
+```
+
+### Setting up Karma
+
+```
+$ npm i karma karma-chai karma-mocha karma-webpack --save-dev
+$ npm i phantomjs-prebuilt --save-dev
+$ npm i karma-sourcemap-loader karma-phantomjs-launcher --save-dev
+$ npm i karma-spec-reporter --save-dev
+
+$ npm i babel-polyfill phantomjs-polyfill --save-dev
+$ npm i yargs --save-dev
+```
+
+Replace test scripts to use karma:
+
+```
+"test": "node_modules/.bin/karma start karma.config.js",
+"test:dev": "npm run test -- --watch",
+```
+
+Create karma.config.js
+
+Create test file:
+
+```
+$ mkdir test/components/                
+$ touch test/components/Application.spec.js
+```
+
+Test content:
+
+```js
+import React from 'react';
+import { shallow } from 'enzyme';
+import Application from 'components/Application';
+
+describe('Application', () => {
+  it ('should mount', () => {
+    const wrapper = shallow(<Application />);
+    expect(wrapper.type()).to.equal('div');
+  });
+});
 ```
 
 ## The API
