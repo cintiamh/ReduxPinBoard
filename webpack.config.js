@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var config = {
   entry: [
@@ -28,9 +29,16 @@ var config = {
         test: /\.js$/,
         loaders: ['babel'],
         exclude: /(node_modules|bower_components)/
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
       }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin("[name].css")
+  ]
 };
 
 module.exports = config;
