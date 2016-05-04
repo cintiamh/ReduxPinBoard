@@ -12,13 +12,7 @@ let store = createStore(boardApp);
 PDK.init({
   appId: PIN_APP,
   cookie: true
-}, function() {
-  PDK.login({ scope : 'read_public' }, function() {
-    console.log('logging in');
-  });
 });
-
-
 
 render(
   <Provider store={store}>

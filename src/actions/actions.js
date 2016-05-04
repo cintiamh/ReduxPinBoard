@@ -18,7 +18,6 @@ function receivePosts(json) {
 function fetchPosts() {
   return dispatch => {
     dispatch(requestPins());
-
   }
 }
 
@@ -33,7 +32,7 @@ function shouldFetchPosts(state, subreddit) {
   }
 }
 
-export function fetchPostsIfNeeded(subreddit) {
+export function fetchPostsIfNeeded() {
   return (dispatch, getState) => {
     if (shouldFetchPosts(getState(), subreddit)) {
       return dispatch(fetchPosts(subreddit))
