@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from '../containers/Header';
 import '../../css/main.css';
 
 const Application = () => (
   <div>
-    <h1>My Board</h1>
+    <Header />
   </div>
 );
 

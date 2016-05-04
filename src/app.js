@@ -9,10 +9,10 @@ import { PIN_APP } from './util/config';
 let store = createStore(boardApp);
 
 // Initialize Pinterest SDK
-PDK.init({
-  appId: PIN_APP,
-  cookie: true
-});
+//PDK.init({
+//  appId: PIN_APP,
+//  cookie: true
+//});
 
 render(
   <Provider store={store}>
